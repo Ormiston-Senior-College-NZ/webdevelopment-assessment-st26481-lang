@@ -1,0 +1,81 @@
+body{
+    background-color:rgb(255,238,224);
+}
+
+header {
+    background-color: rgb(255,192,204) ;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    border-bottom: 6.5px solid rgb(67,51,41);
+    padding: 30px;
+}
+    /*border-left: 6.5px solid rgb(67,51,41);
+    border-right: 6.5px solid rgb(67,51,41);
+    border-top: 6.5px solid rgb(67,51,41);
+    border-radius: 250px;*/
+
+h1 {
+    color: rgb(67,51,41);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+h2{
+    color: rgb(67,51,41);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(108,82,67);
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 15px;
+    justify-content: center;
+}
+
+a:hover {
+    color: rgb(212, 122, 137);
+    font-size: 30px;
+    font-weight: bolder;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+p{
+    color: rgb(108,82,67);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+li{
+    color: rgb(108,82,67);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+footer{
+    background-color: rgb(255,192,204) ;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    border-top: 6.5px solid rgb(67,51,41);
+    padding: 30px;
+}
+
+/* colours to use: 185,220,161 (light green), 210,193,225 (light purple), 255,192,204 (light pink), 255,161,176(darker, complimentary pink), 212, 122, 137(even darker pink), 108,82,67 (light brown), 67,51,41 (dark brown), 194,229,255 (light blue), 255,238,224 (cream/white) */
