@@ -12,6 +12,16 @@ header {
     border-bottom: 6.5px solid rgb(67,51,41);
     padding: 30px;
 }
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 5px;
+    border: none;
+}
+
+
     /*border-left: 6.5px solid rgb(67,51,41);
     border-right: 6.5px solid rgb(67,51,41);
     border-top: 6.5px solid rgb(67,51,41);
@@ -30,7 +40,7 @@ h2{
     text-align: none;
     font-family: 'Trebuchet MS', serif;
     font-size: 30px;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 a {
@@ -76,6 +86,88 @@ footer{
     font-weight: bolder;
     border-top: 6.5px solid rgb(67,51,41);
     padding: 30px;
+}
+
+
+
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-container1 div {
+    background-color: rgb(255, 192, 204);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container1 .grid-item1{
+    justify-content: center;
+    background-color: rgba(185, 220, 161, 0.45);
+}
+
+.grid-container1 .grid-item2{
+    justify-content: center;
+    background-color: rgba(204, 233, 255, 0.45);
+}
+
+.grid-container1 .grid-item3{
+    justify-content: center;
+    background-color: rgba(185, 220, 161, 0.45);
+}
+
+
+
+.My-skills{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.grid-container2 div {
+    background-color: rgb(204, 233, 255, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item1{
+    background-color: rgb(204, 233, 255, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item2{
+    background-color: rgb(185, 220, 161, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item3{
+    background-color: rgb(204, 233, 255, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.My-strengths{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
 }
 
 /* colours to use: 185,220,161 (light green), 210,193,225 (light purple), 255,192,204 (light pink), 255,161,176(darker, complimentary pink), 212, 122, 137(even darker pink), 108,82,67 (light brown), 67,51,41 (dark brown), 194,229,255 (light blue), 255,238,224 (cream/white) */
