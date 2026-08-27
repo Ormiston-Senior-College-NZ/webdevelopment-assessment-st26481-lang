@@ -1,5 +1,10 @@
+/*BASICS START*/
 body{
     background-color:rgb(255,238,224);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -11,6 +16,20 @@ header {
     font-weight: bolder;
     border-bottom: 6.5px solid rgb(67,51,41);
     padding: 30px;
+    position: sticky;
+    bottom: 0;
+}
+
+footer{
+    background-color: rgb(255,192,204) ;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    border-top: 6.5px solid rgb(67,51,41);
+    padding: 30px;
+    margin-top: auto;
 }
 
 nav {
@@ -20,6 +39,7 @@ nav {
     padding: 5px;
     border: none;
 }
+/*BASICS END*/
 
 
     /*border-left: 6.5px solid rgb(67,51,41);
@@ -27,6 +47,8 @@ nav {
     border-top: 6.5px solid rgb(67,51,41);
     border-radius: 250px;*/
 
+
+/*TEXT START*/
 h1 {
     color: rgb(67,51,41);
     text-align: none;
@@ -44,13 +66,13 @@ h2{
 }
 
 a {
-    text-decoration: none;
     color: rgb(108,82,67);
     font-family: 'Trebuchet MS', serif;
     font-size: 25px;
     font-weight: bolder;
     padding: 15px;
     justify-content: center;
+    text-decoration: none;
 }
 
 a:hover {
@@ -59,6 +81,7 @@ a:hover {
     font-weight: bolder;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
+    text-decoration: none;
 }
 
 p{
@@ -76,20 +99,101 @@ li{
     font-size: 25px;
     font-weight: bolder;
 }
+/*TEXT END*/
 
-footer{
-    background-color: rgb(255,192,204) ;
-    padding: 20px;
+
+/*HOME PAGE START*/
+.Welcome-to-my-website {
     text-align: center;
-    font-family: 'Trebuchet MS', serif;
-    font-size: 30px;
-    font-weight: bolder;
-    border-top: 6.5px solid rgb(67,51,41);
+    padding: 35px 20px 25px;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1350px;
+    margin: 20px auto;
+    align-items: stretch;
+    border: 3px solid rgb(67, 51, 41);
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-grid-image {
+    position: relative;
+}
+
+.home-grid-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.home-grid-link {
+    display: block;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: none;
+}
+
+.home-grid-link:hover {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.home-grid-link:hover .home-grid {
+    transform: scale(1.02);
+    background-color: rgba(204, 233, 255, 0.45);
+}
+
+.home-grid-link:focus-visible {
+    outline: 3px solid rgb(212, 122, 137);
+    outline-offset: 4px;
+}
+
+.home-grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px;
 }
 
+@media (max-width: 650px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    .home-grid-image img {
+        height: 280px;
+    }
+}
+
+.home-grid-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    padding: 20px;
+}
+
+/*HOME PAGE END*/
 
 
+/*SKILLS AND STRENGTHS (PAGE) START*/
+.My-skills{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
 
 .grid-container1 {
     display: grid;
@@ -122,9 +226,9 @@ footer{
 
 
 
-.My-skills{
+.My-strengths{
     text-align: center;
-    padding-top: 35px;
+    padding-top: 65px;
     padding-bottom: 25px;
 }
 
@@ -137,28 +241,28 @@ footer{
 }
 
 .grid-container2 div {
-    background-color: rgb(204, 233, 255, 0.45);
+    background-color: rgb(255, 192, 204);
     padding: 30px;
     text-align: center;
     border: 3px solid rgb(67, 51, 41);
 }
 
 .grid-container2 .grid-item1{
-    background-color: rgb(204, 233, 255, 0.45);
+    background-color: rgba(185, 220, 161, 0.45);
     padding: 30px;
     text-align: center;
     border: 3px solid rgb(67, 51, 41);
 }
 
 .grid-container2 .grid-item2{
-    background-color: rgb(185, 220, 161, 0.45);
+    background-color: rgba(204, 233, 255, 0.45);
     padding: 30px;
     text-align: center;
     border: 3px solid rgb(67, 51, 41);
 }
 
 .grid-container2 .grid-item3{
-    background-color: rgb(204, 233, 255, 0.45);
+    background-color: rgba(185, 220, 161, 0.45);
     padding: 30px;
     text-align: center;
     border: 3px solid rgb(67, 51, 41);
@@ -169,5 +273,9 @@ footer{
     padding-top: 35px;
     padding-bottom: 25px;
 }
+/*SKILLS AND STRENGTHS (PAGE) END*/
+
+
+
 
 /* colours to use: 185,220,161 (light green), 210,193,225 (light purple), 255,192,204 (light pink), 255,161,176(darker, complimentary pink), 212, 122, 137(even darker pink), 108,82,67 (light brown), 67,51,41 (dark brown), 194,229,255 (light blue), 255,238,224 (cream/white) */
