@@ -89,7 +89,7 @@ p{
     text-align: none;
     font-family: 'Trebuchet MS', serif;
     font-size: 25px;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 li{
@@ -108,30 +108,58 @@ li{
     padding: 35px 20px 25px;
 }
 
+.home-grid-link:hover .home-grid-text strong {
+    color: rgb(136, 171, 197);
+}
+
+.home-grid-text p strong {
+    font-weight: bolder;
+    color: rgb(124, 160, 99);
+    margin: 0px;
+} 
+
+.home-grid-text h2 {
+    margin: 6px 6px 8px;
+
+}
+
+.home-grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 20px 0;
+}
+
 .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1350px;
-    margin: 20px auto;
-    align-items: stretch;
-    border: 3px solid rgb(67, 51, 41);
+    gap: 15px;
+    width: 100%;
+    height: 300px;
+    min-width: 500px;
     background-color: rgba(185, 220, 161, 0.45);
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     transition: transform 0.3s ease-in-out;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
 }
 
 .home-grid-image {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-grid-image img {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
+    width: auto;
+    height: 220px;
+    max-width: 100%;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
 }
 
 .home-grid-link {
@@ -140,6 +168,7 @@ li{
     font-size: inherit;
     padding: 0;
     text-decoration: none;
+    width: 100%;
 }
 
 .home-grid-link:hover {
@@ -160,31 +189,28 @@ li{
     outline-offset: 4px;
 }
 
-.home-grid-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
+.home-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: calc(100% - 40px);
+    max-width: 1600px;
+    margin: 20px auto;
 }
 
 @media (max-width: 650px) {
+    .home-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+
     .home-grid {
         grid-template-columns: 1fr;
-        margin: 20px;
     }
 
     .home-grid-image img {
         height: 280px;
     }
 }
-
-.home-grid-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    padding: 20px;
-}
-
 /*HOME PAGE END*/
 
 
