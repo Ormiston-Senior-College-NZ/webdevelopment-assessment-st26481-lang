@@ -1,4 +1,11 @@
 /*BASICS START*/
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body{
     background-color:rgb(255,238,224);
     margin: 0;
@@ -21,7 +28,7 @@ header {
 }
 
 footer{
-    background-color: rgb(255,192,204) ;
+    background-color: rgb(255,192,204);
     padding: 20px;
     text-align: center;
     font-family: 'Trebuchet MS', serif;
@@ -34,11 +41,22 @@ footer{
 
 nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 5px;
     border: none;
 }
+
+nav a {
+    text-align: center;
+    width: 100%;
+}
+
+nav a:hover {
+    color: rgb(212, 122, 137);
+}
+
+
 /*BASICS END*/
 
 
@@ -48,7 +66,7 @@ nav {
     border-radius: 250px;*/
 
 
-/*TEXT START*/
+/*GENERAL TEXT START*/
 h1 {
     color: rgb(67,51,41);
     text-align: none;
@@ -77,7 +95,8 @@ a {
 
 a:hover {
     color: rgb(212, 122, 137);
-    font-size: 30px;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
     font-weight: bolder;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -99,7 +118,7 @@ li{
     font-size: 25px;
     font-weight: bolder;
 }
-/*TEXT END*/
+/*GENERAL TEXT END*/
 
 
 /*HOME PAGE START*/
@@ -130,13 +149,21 @@ li{
     padding: 20px 20px 20px 0;
 }
 
+.header-nav-home nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 5px;
+
+}
+
 .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     width: 100%;
-    height: 300px;
-    min-width: 500px;
+    min-height: 220px;
+    height: 100%;
     background-color: rgba(185, 220, 161, 0.45);
     overflow: hidden;
     text-align: left;
@@ -144,17 +171,22 @@ li{
     border: 3px solid rgb(67, 51, 41);
     box-sizing: border-box;
     align-items: stretch;
+    margin: 0;
 }
 
 .home-grid-image {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 12px 25px 12px;
+    box-sizing: border-box;
 }
 
 .home-grid-image img {
     display: block;
-    width: auto;
+    width: 100%;
     height: 220px;
     max-width: 100%;
     object-fit: contain;
@@ -163,12 +195,13 @@ li{
 }
 
 .home-grid-link {
-    display: block;
+    display: flex;
     color: inherit;
     font-size: inherit;
     padding: 0;
     text-decoration: none;
     width: 100%;
+    height: 100%;
 }
 
 .home-grid-link:hover {
@@ -191,27 +224,209 @@ li{
 
 .home-grid-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
-    width: calc(100% - 40px);
-    max-width: 1600px;
+    width: min(1450px, calc(100% - 20px));
+    max-width: 1450px;
     margin: 20px auto;
+    align-items: stretch;
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     .home-grid-wrapper {
+        display: grid;
         grid-template-columns: 1fr;
+        width: calc(100% - 20px);
+        max-width: 100%;
+        gap: 18px;
     }
 
     .home-grid {
+        display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        gap: 5px;
+    }
+
+    .home-grid-image {
+        width: 100%;
+        padding: 10px 10px 25px 10px;
     }
 
     .home-grid-image img {
-        height: 280px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center top;
     }
+
+    .home-grid-text {
+        padding: 15px 15px 18px;
+    }
+
+    nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
 }
 /*HOME PAGE END*/
+
+
+/*PROJECTS & ACHIEVEMENTS START*/
+.top-heading {
+    text-align: center;
+    max-width: 1350px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-nav-project-and-achievement nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.8fr;
+    background-color: rgba(185, 220, 161, 0.45);
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);;
+    gap: 25px;
+    margin: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.project-text h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+
+.project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image img {
+    display: block;
+    max-width: 270px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+/*SPACEEEEEEEEEEEEEEEEEEEEE*/
+
+.achievement-grid1 {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    background-color: rgba(204, 233, 255, 0.45);
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 5px solid rgb(67, 51, 41);;
+    gap: 15px;
+    margin-top: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.achievement1-text1 h2, .achievement2-text2 h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+
+.achievement1-image1, .achievement2-image2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement1-image1 img {
+    display: block;
+    max-width: 660px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+.achievement-grid2 {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    background-color: rgba(185, 220, 161, 0.45);
+    border-bottom: 3px solid rgb(67, 51, 41);;
+    gap: 15px;
+    margin-top: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.achievement2-image2 img {
+    display: block;
+    max-width: 660px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+
+
+@media (max-width: 700px) {
+    nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+}
+
+@media (max-width: 1250px) {
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .achievement-grid1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .achievement-grid2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 15px auto;
+        gap: 20px;
+    }
+}
+/*PROJECTS & ACHIEVEMENTS END*/
 
 
 /*SKILLS AND STRENGTHS (PAGE) START*/
@@ -219,6 +434,13 @@ li{
     text-align: center;
     padding-top: 35px;
     padding-bottom: 25px;
+}
+
+.header-nav-skills nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
 }
 
 .grid-container1 {
@@ -249,8 +471,6 @@ li{
     justify-content: center;
     background-color: rgba(185, 220, 161, 0.45);
 }
-
-
 
 .My-strengths{
     text-align: center;
@@ -298,6 +518,35 @@ li{
     text-align: center;
     padding-top: 35px;
     padding-bottom: 25px;
+}
+
+.header-nav-skills nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+@media (max-width: 1024px) {
+    .grid-container1,
+    .grid-container2 {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .grid-container1 div,
+    .grid-container2 div {
+        width: 100%;
+        /* max-width: 550px; */
+        padding: 30px;
+        background-color: rgba(185, 220, 161, 0.45);
+        text-align: center;
+        border: 3px solid rgb(67, 51, 41);
+        box-sizing: border-box;
+    };
+
 }
 /*SKILLS AND STRENGTHS (PAGE) END*/
 
