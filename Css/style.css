@@ -36,7 +36,7 @@ footer{
     font-weight: bolder;
     border-top: 6.5px solid rgb(67,51,41);
     padding: 30px;
-    margin-top: 35px;
+    margin-top: auto;
     
 }
 
@@ -57,7 +57,14 @@ nav a:hover {
     color: rgb(212, 122, 137);
 }
 
+@media (max-width: 1024px) {
+    .header-nav-interests nav, 
+    .header-nav-project-and-achievement nav, 
+    .header-nav-skills nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+}
 /*BASICS END*/
 
 
@@ -143,19 +150,15 @@ li{
 
 }
 
+.header-home p {
+    color: rgb(188, 95, 111);
+}
+
 .home-grid-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px 20px 20px 0;
-}
-
-.header-nav-home nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 5px;
-
 }
 
 .home-grid {
@@ -240,7 +243,11 @@ li{
     box-sizing: border-box;
 }
 
-@media (max-width: 1250px) {
+.header-home ~ .home-grid-wrapper {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
     .home-grid-wrapper {
         grid-template-columns: 1fr;
     }
@@ -250,13 +257,13 @@ li{
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1024px) {
     .home-grid-wrapper {
         display: grid;
         grid-template-columns: 1fr;
-        width: calc(100% - 20px);
+        width: 75%;
         max-width: 100%;
-        gap: 18px;
+        gap: 55px;
     }
 
     .home-grid {
@@ -275,7 +282,8 @@ li{
     }
 
     .home-grid-image img {
-        width: calc(100% - 20px);
+        width: 50%;
+        max-width: 250px;
         height: auto;
         object-fit: contain;
         object-position: center top;
@@ -291,7 +299,7 @@ li{
     }
 
     nav a {
-        font-size: 16px;
+        font-size: 25px;
         padding: 10px 8px;
         word-break: break-word;
         white-space: normal;
@@ -304,10 +312,11 @@ li{
 .interests-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 15px;
+    width: 100%;
     width: 100%;
     min-height: 220px;
     height: 100%;
+    box-sizing: border-box;
     background-color: rgba(185, 220, 161, 0.45);
     overflow: hidden;
     text-align: left;
@@ -354,6 +363,34 @@ li{
     box-sizing: border-box;
     align-items: stretch;
     margin-bottom: 50px;
+}
+
+.interests-grid-flip {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(204, 233, 255, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+    padding: 20px 0 20px 20px;
+}
+
+.interests-grid-flip .interests-grid-text {
+    order: 1;
+    padding: 20px 0 20px 20px;
+}
+
+.interests-grid-flip .interests-grid-image2 {
+    order: 2;
 }
 
 .interests-grid-image {
@@ -409,8 +446,9 @@ li{
 }
 
 .reading-images img {
-    width: 100%;
-    height: 260px;
+    width: calc(100% - 20px);
+    height: auto;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
 }
 
@@ -419,6 +457,66 @@ li{
     flex-direction: column;
     justify-content: center;
     padding: 20px 20px 20px 0;
+}
+
+@media (max-width: 1020px) {
+    .interests-grid,
+    .interests-grid2,
+    .interests-grid3,
+    .interests-grid-flip {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .interests-grid-image,
+    .interests-grid-image1,
+    .interests-grid-image2 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+        gap: 10px;
+    }
+
+    .interests-grid-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .interests-grid-image2 img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .reading-images img {
+        height: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+    }
+
+    .interests-grid-text,
+    .interests-grid-flip .interests-grid-text {
+        order: 1;
+        padding: 15px;
+    }
+
+    .interests-grid-image,
+    .interests-grid-image1,
+    .interests-grid-image2,
+    .interests-grid-flip .interests-grid-image2 {
+        order: 2;
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
 }
 
 
@@ -544,7 +642,7 @@ li{
     
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1024px) {
     .project-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -573,6 +671,14 @@ li{
         height: auto;
         margin-top: 15px;
     }
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
 }
 /*PROJECTS & ACHIEVEMENTS END*/
 
@@ -699,6 +805,13 @@ li{
         border: 3px solid rgb(67, 51, 41);
         box-sizing: border-box;
     };
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
 
 }
 /*SKILLS AND STRENGTHS (PAGE) END*/
