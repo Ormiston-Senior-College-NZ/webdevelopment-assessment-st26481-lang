@@ -36,7 +36,8 @@ footer{
     font-weight: bolder;
     border-top: 6.5px solid rgb(67,51,41);
     padding: 30px;
-    margin-top: auto;
+    margin-top: 35px;
+    
 }
 
 nav {
@@ -159,7 +160,7 @@ li{
 
 .home-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.8fr;
     gap: 15px;
     width: 100%;
     min-height: 220px;
@@ -174,6 +175,7 @@ li{
     margin: 0;
 }
 
+
 .home-grid-image {
     display: flex;
     justify-content: center;
@@ -186,11 +188,11 @@ li{
 
 .home-grid-image img {
     display: block;
-    width: 100%;
+    width: calc(100% - 24px);
     height: 220px;
     max-width: 100%;
     object-fit: contain;
-    border: 3px solid rgb(67, 51, 41);
+    
     box-sizing: border-box;
 }
 
@@ -222,19 +224,33 @@ li{
     outline-offset: 4px;
 }
 
+.home-grid-link:last-child {
+    grid-column: 1 / -1;
+}
+
 .home-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
     width: min(1450px, calc(100% - 20px));
     max-width: 1450px;
-    margin: 20px auto;
+    margin: 20px auto 0;
     align-items: stretch;
     padding: 0 5px;
     box-sizing: border-box;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1250px) {
+    .home-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .home-grid-link:last-child {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 550px) {
     .home-grid-wrapper {
         display: grid;
         grid-template-columns: 1fr;
@@ -259,7 +275,7 @@ li{
     }
 
     .home-grid-image img {
-        width: 100%;
+        width: calc(100% - 20px);
         height: auto;
         object-fit: contain;
         object-position: center top;
@@ -283,6 +299,131 @@ li{
 
 }
 /*HOME PAGE END*/
+
+/*INTERESTS & HOBBIES START*/
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.interests-grid2 {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(204, 233, 255, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.interests-grid3 {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.interests-grid-image {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    width: calc(100% - 24px);
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.interests-grid-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: calc(100% - 20px);
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    margin: 0;
+    gap: 0;
+    
+}
+
+.interests-grid-image2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    width: calc(100% - 24px);
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.interests-grid-image2 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: calc(100% - 20px);
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    margin: 0;
+    gap: 0;
+    
+}
+
+.reading-images img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.interests-grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 20px 0;
+}
+
+
+/*INTERESTS & HOBBIES END*/
+
 
 
 /*PROJECTS & ACHIEVEMENTS START*/
@@ -376,7 +517,9 @@ li{
     background-color: rgba(185, 220, 161, 0.45);
     border-bottom: 3px solid rgb(67, 51, 41);;
     gap: 15px;
-    margin-top: 15px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
@@ -410,7 +553,7 @@ li{
         gap: 20px;
     }
 
-    .achievement-grid1 {
+    .achievement-grid1, .achievement-grid2 {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
@@ -418,12 +561,17 @@ li{
         gap: 20px;
     }
 
-    .achievement-grid2 {
-        display: grid;
-        grid-template-columns: 1fr;
+    .achievement1-image1,
+    .achievement2-image2 {
+        min-width: 0;
+    }
+
+    .achievement1-image1 img,
+    .achievement2-image2 img {
         width: 100%;
-        margin-bottom: 15px auto;
-        gap: 20px;
+        max-width: 660px;
+        height: auto;
+        margin-top: 15px;
     }
 }
 /*PROJECTS & ACHIEVEMENTS END*/
@@ -455,6 +603,9 @@ li{
     padding: 30px;
     text-align: center;
     border: 3px solid rgb(67, 51, 41);
+    margin-top: 25px;
+    padding-bottom: 0px;
+    margin-bottom: 25px;
 }
 
 .grid-container1 .grid-item1{
@@ -482,8 +633,10 @@ li{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    padding: 20px;
-    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 25px;
 }
 
 .grid-container2 div {
