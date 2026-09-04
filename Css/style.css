@@ -1,0 +1,822 @@
+/*BASICS START*/
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body{
+    background-color:rgb(255,238,224);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(255,192,204) ;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    border-bottom: 6.5px solid rgb(67,51,41);
+    padding: 30px;
+    position: sticky;
+    bottom: 0;
+}
+
+footer{
+    background-color: rgb(255,192,204);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    font-weight: bolder;
+    border-top: 6.5px solid rgb(67,51,41);
+    padding: 30px;
+    margin-top: auto;
+    
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+    border: none;
+}
+
+nav a {
+    text-align: center;
+    width: 100%;
+}
+
+nav a:hover {
+    color: rgb(212, 122, 137);
+}
+
+@media (max-width: 1024px) {
+    .header-nav-interests nav, 
+    .header-nav-project-and-achievement nav, 
+    .header-nav-skills nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+/*BASICS END*/
+
+
+    /*border-left: 6.5px solid rgb(67,51,41);
+    border-right: 6.5px solid rgb(67,51,41);
+    border-top: 6.5px solid rgb(67,51,41);
+    border-radius: 250px;*/
+
+
+/*GENERAL TEXT START*/
+h1 {
+    color: rgb(67,51,41);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+h2{
+    color: rgb(67,51,41);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 30px;
+    margin-top: 45px;
+}
+
+a {
+    color: rgb(108,82,67);
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 15px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(212, 122, 137);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    font-weight: bolder;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
+}
+
+p{
+    color: rgb(108,82,67);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+li{
+    color: rgb(108,82,67);
+    text-align: none;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 25px;
+    font-weight: bolder;
+}
+/*GENERAL TEXT END*/
+
+
+/*HOME PAGE START*/
+.Welcome-to-my-website {
+    text-align: center;
+    padding: 35px 20px 25px;
+}
+
+.home-grid-link:hover .home-grid-text strong {
+    color: rgb(136, 171, 197);
+}
+
+.home-grid-text p strong {
+    font-weight: bolder;
+    color: rgb(124, 160, 99);
+    margin: 0px;
+} 
+
+.home-grid-text h2 {
+    margin: 6px 6px 8px;
+
+}
+
+.header-home p {
+    color: rgb(188, 95, 111);
+}
+
+.home-grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 20px 0;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin: 0;
+}
+
+
+.home-grid-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 12px 25px 12px;
+    box-sizing: border-box;
+}
+
+.home-grid-image img {
+    display: block;
+    width: calc(100% - 24px);
+    height: 220px;
+    max-width: 100%;
+    object-fit: contain;
+    
+    box-sizing: border-box;
+}
+
+.home-grid-link {
+    display: flex;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.home-grid-link:hover {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.home-grid-link:hover .home-grid {
+    transform: scale(1.02);
+    background-color: rgba(204, 233, 255, 0.45);
+}
+
+.home-grid-link:focus-visible {
+    outline: 3px solid rgb(212, 122, 137);
+    outline-offset: 4px;
+}
+
+.home-grid-link:last-child {
+    grid-column: 1 / -1;
+}
+
+.home-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    width: min(1450px, calc(100% - 20px));
+    max-width: 1450px;
+    margin: 20px auto 0;
+    align-items: stretch;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.header-home ~ .home-grid-wrapper {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+    .home-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .home-grid-link:last-child {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .home-grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 75%;
+        max-width: 100%;
+        gap: 55px;
+    }
+
+    .home-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        gap: 5px;
+    }
+
+    .home-grid-image {
+        width: 100%;
+        padding: 10px 10px 25px 10px;
+    }
+
+    .home-grid-image img {
+        width: 50%;
+        max-width: 250px;
+        height: auto;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .home-grid-text {
+        padding: 15px 15px 18px;
+    }
+
+    nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+}
+/*HOME PAGE END*/
+
+/*INTERESTS & HOBBIES START*/
+.interests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    width: 100%;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.interests-grid2 {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(204, 233, 255, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.interests-grid3 {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(185, 220, 161, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.interests-grid-flip {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 15px;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    background-color: rgba(204, 233, 255, 0.45);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 50px;
+    padding: 20px 0 20px 20px;
+}
+
+.interests-grid-flip .interests-grid-text {
+    order: 1;
+    padding: 20px 0 20px 20px;
+}
+
+.interests-grid-flip .interests-grid-image2 {
+    order: 2;
+}
+
+.interests-grid-image {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    width: calc(100% - 24px);
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.interests-grid-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: calc(100% - 20px);
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    margin: 0;
+    gap: 0;
+    
+}
+
+.interests-grid-image2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    width: calc(100% - 24px);
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.interests-grid-image2 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: calc(100% - 20px);
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+    margin: 0;
+    gap: 0;
+    
+}
+
+.reading-images img {
+    width: calc(100% - 20px);
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.interests-grid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 20px 0;
+}
+
+@media (max-width: 1020px) {
+    .interests-grid,
+    .interests-grid2,
+    .interests-grid3,
+    .interests-grid-flip {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .interests-grid-image,
+    .interests-grid-image1,
+    .interests-grid-image2 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+        gap: 10px;
+    }
+
+    .interests-grid-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .interests-grid-image2 img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .reading-images img {
+        height: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+    }
+
+    .interests-grid-text,
+    .interests-grid-flip .interests-grid-text {
+        order: 1;
+        padding: 15px;
+    }
+
+    .interests-grid-image,
+    .interests-grid-image1,
+    .interests-grid-image2,
+    .interests-grid-flip .interests-grid-image2 {
+        order: 2;
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+}
+
+
+/*INTERESTS & HOBBIES END*/
+
+
+
+/*PROJECTS & ACHIEVEMENTS START*/
+.top-heading {
+    text-align: center;
+    max-width: 1350px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-nav-project-and-achievement nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.8fr;
+    background-color: rgba(185, 220, 161, 0.45);
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 3px solid rgb(67, 51, 41);;
+    gap: 25px;
+    margin: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.project-text h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+
+.project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image img {
+    display: block;
+    max-width: 270px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+/*SPACEEEEEEEEEEEEEEEEEEEEE*/
+
+.achievement-grid1 {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    background-color: rgba(204, 233, 255, 0.45);
+    border-top: 3px solid rgb(67, 51, 41);
+    border-bottom: 5px solid rgb(67, 51, 41);;
+    gap: 15px;
+    margin-top: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.achievement1-text1 h2, .achievement2-text2 h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+
+.achievement1-image1, .achievement2-image2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement1-image1 img {
+    display: block;
+    max-width: 660px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+.achievement-grid2 {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    background-color: rgba(185, 220, 161, 0.45);
+    border-bottom: 3px solid rgb(67, 51, 41);;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.achievement2-image2 img {
+    display: block;
+    max-width: 660px;
+    max-height: auto;
+    object-fit: contain;
+    border: 3px solid rgb(67, 51, 41);
+    box-sizing: border-box;
+}
+
+
+
+@media (max-width: 700px) {
+    nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+}
+
+@media (max-width: 1024px) {
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .achievement-grid1, .achievement-grid2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .achievement1-image1,
+    .achievement2-image2 {
+        min-width: 0;
+    }
+
+    .achievement1-image1 img,
+    .achievement2-image2 img {
+        width: 100%;
+        max-width: 660px;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+}
+/*PROJECTS & ACHIEVEMENTS END*/
+
+
+/*SKILLS AND STRENGTHS (PAGE) START*/
+.My-skills{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+.header-nav-skills nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-container1 div {
+    background-color: rgb(255, 192, 204);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+    margin-top: 25px;
+    padding-bottom: 0px;
+    margin-bottom: 25px;
+}
+
+.grid-container1 .grid-item1{
+    justify-content: center;
+    background-color: rgba(185, 220, 161, 0.45);
+}
+
+.grid-container1 .grid-item2{
+    justify-content: center;
+    background-color: rgba(204, 233, 255, 0.45);
+}
+
+.grid-container1 .grid-item3{
+    justify-content: center;
+    background-color: rgba(185, 220, 161, 0.45);
+}
+
+.My-strengths{
+    text-align: center;
+    padding-top: 65px;
+    padding-bottom: 25px;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 25px;
+}
+
+.grid-container2 div {
+    background-color: rgb(255, 192, 204);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item1{
+    background-color: rgba(185, 220, 161, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item2{
+    background-color: rgba(204, 233, 255, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.grid-container2 .grid-item3{
+    background-color: rgba(185, 220, 161, 0.45);
+    padding: 30px;
+    text-align: center;
+    border: 3px solid rgb(67, 51, 41);
+}
+
+.My-strengths{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+.header-nav-skills nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+@media (max-width: 1024px) {
+    .grid-container1,
+    .grid-container2 {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .grid-container1 div,
+    .grid-container2 div {
+        width: 100%;
+        /* max-width: 550px; */
+        padding: 30px;
+        background-color: rgba(185, 220, 161, 0.45);
+        text-align: center;
+        border: 3px solid rgb(67, 51, 41);
+        box-sizing: border-box;
+    };
+
+    nav a {
+        font-size: 25px;
+        padding: 10px 8px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+}
+/*SKILLS AND STRENGTHS (PAGE) END*/
+
+
+
+
+/* colours to use: 185,220,161 (light green), 210,193,225 (light purple), 255,192,204 (light pink), 255,161,176(darker, complimentary pink), 212, 122, 137(even darker pink), 108,82,67 (light brown), 67,51,41 (dark brown), 194,229,255 (light blue), 255,238,224 (cream/white) */
